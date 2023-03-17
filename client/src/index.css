@@ -1,3 +1,8 @@
+html {
+  height: 100%;
+  background: rgb(9,11,52);
+  background: linear-gradient(35deg, rgba(9,11,52,1) 0%, rgba(22,28,76,1) 100%); 
+}
 body {
   margin: 0;
   font-family: sans-serif;
