@@ -77,6 +77,18 @@ const elements = {
       value: "Body Text",
     }
   ),
+  cta: Object.defineProperty(
+    {
+      fontFamily: typography.fontFamily.default,
+      fontSize: typography.fontSize.xSmall,
+      fontWeight: typography.fontWeight.semiBold,
+    } as const,
+    "name",
+    {
+      enumerable: false,
+      value: "Body Text",
+    }
+  ),
 };
 
 export default {

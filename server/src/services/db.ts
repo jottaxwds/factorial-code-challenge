@@ -33,7 +33,7 @@ const saveMetricsToJSONDb = async (metrics: Metric[]) => {
 export const initDB = async () => {
   await fs.readFile('./db.json', async (err, data: Buffer) => {
     if (err) {
-      await saveMetricsToJSONDb(generateMetricsData(10))
+      await saveMetricsToJSONDb(generateMetricsData(100))
       return
     }
 
@@ -43,10 +43,10 @@ export const initDB = async () => {
       if (Array.isArray(metrics) && metrics.length > 0) {
         return
       }
-      await saveMetricsToJSONDb(generateMetricsData(10))
+      await saveMetricsToJSONDb(generateMetricsData(100))
     } catch (err) {
       console.error('Error creating database:', err)
-      await saveMetricsToJSONDb(generateMetricsData(10))
+      await saveMetricsToJSONDb(generateMetricsData(100))
     }
   })
 }

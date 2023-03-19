@@ -3,7 +3,8 @@ import theme from "../../theme";
 
 export const Dialog = styled.div`
   background: ${theme.palette.contentBlue};
-  min-width: 200px;
+  min-width: 300px;
+  width: auto;
   min-height: 100px;
   display: flex;
   flex-direction: column;
@@ -19,6 +20,7 @@ export const DialogWrapper = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
+  z-index: 999;
   top: 0;
   left: 0;
   width: 100%;
@@ -30,7 +32,7 @@ export const DialogOverlay = styled.div`
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.6);
 `;
 
 export const CloseAction = styled.div`
@@ -51,4 +53,5 @@ export const Close = styled.button`
   cursor: pointer;
   font-weight: bold;
   color: ${theme.palette.light};
+  ${theme.typography.cta};
 `;

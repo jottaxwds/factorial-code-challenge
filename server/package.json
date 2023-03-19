@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:3001",
   "name": "server",
   "version": "1.0.0",
   "description": "",
@@ -8,10 +9,10 @@
     "test": "jest --detectOpenHandles --logHeapUsage",
     "test:watch": "jest --watch --detectOpenHandles --logHeapUsage",
     "test:coverage": "npm run test -- --coverage",
-    "json-server-start": "json-server --watch db.json --port 3004",
+    "json-server-start": "json-server --watch db.json --port 3002",
     "lint": "eslint --ext .ts,.js .",
-    "format": "prettier \"src/**\" --write --ignore-unknown",
-    "format:check": "prettier --check \"src/**\" --ignore-unknown"
+    "prettier": "prettier \"src/**\" --write --ignore-unknown",
+    "prettier:check": "prettier --check \"src/**\" --ignore-unknown"
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +22,7 @@
     "axios": "^1.3.4",
     "body-parser": "^1.20.2",
     "chalk": "^5.2.0",
+    "cors": "^2.8.5",
     "dayjs": "^1.11.7",
     "express": "^4.18.2",
     "http-server": "^14.1.1",

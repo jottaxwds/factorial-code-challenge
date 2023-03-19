@@ -1,7 +1,7 @@
 export interface MetricDB {
   id: string
   timestamp: Date
-  value: number
+  value: string
   name: string
 }
 
@@ -11,12 +11,17 @@ export interface MetricsResponse {
   metrics: MetricDB[]
 }
 
-export function isMetricData(data: any): data is { metric: Metric } {
+export function isMetricData(data: MetricDB): data is MetricDB {
   return (
     typeof data === 'object' &&
-    data.metric &&
-    typeof data.metric.name === 'string' &&
-    typeof data.metric.value === 'string' &&
-    typeof data.metric.timestamp === 'number'
+    typeof data.name === 'string' &&
+    typeof data.value === 'string' &&
+    typeof data.timestamp === 'number'
   )
+}
+
+export interface GetAllMetricsResponse {
+  metrics: Metric[]
+  total: string
+  error: string | null
 }

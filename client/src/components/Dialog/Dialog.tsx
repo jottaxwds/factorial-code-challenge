@@ -12,7 +12,7 @@ const Dialog = ({ children, onClose }: DialogProps) => (
       <S.CloseAction>
         <S.Close onClick={onClose}>X</S.Close>
       </S.CloseAction>
-      { children }
+      {children}
     </S.Dialog>
   </S.DialogWrapper>
 );
