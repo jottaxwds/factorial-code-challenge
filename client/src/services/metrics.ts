@@ -24,7 +24,7 @@ const getPaginatedMetrics = async (page: number, pageSize: number) => {
   }
 };
 
-export const getAverages = async (): Promise<Averages> => {
+const getAverages = async (): Promise<Averages> => {
   try {
     const {
       data: { perHour = 0, perMinute = 0, perDay = 0 },
@@ -57,4 +57,4 @@ const postMetric = async (metric: NewMetric) => {
   }
 };
 
-export { postMetric, getPaginatedMetrics };
+export { postMetric, getPaginatedMetrics, getAverages };

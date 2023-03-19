@@ -20,7 +20,7 @@ const AppProvider = ({ children }: { children: any }) => {
   const [metrics, updateMetrics] = React.useState<Metric[]>([]);
   const [total, updateTotal] = React.useState(0);
   const [averages, updateAverages] = React.useState(initialState.averages);
-  // eslint-disable-next-line react/jsx-no-constructed-context-values
+
   return (
     <AppContext.Provider
       value={{

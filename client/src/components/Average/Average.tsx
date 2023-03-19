@@ -8,9 +8,13 @@ export interface AverageProps {
 
 const Average = ({ title, value, displayValue }: AverageProps) => {
   return (
-    <S.AverageWrapper>
+    <S.AverageWrapper data-testid={"average"}>
       <S.Title>{title}</S.Title>
-      <S.Progress value={value} text={displayValue} />
+      <S.Progress
+        data-testid={"average-progress"}
+        value={value}
+        text={displayValue}
+      />
     </S.AverageWrapper>
   );
 };

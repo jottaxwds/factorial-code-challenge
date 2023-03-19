@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Average Should a Title and CircularProgress by given average data 1`] = `
+<div
+  class="sc-beqWaB efcNtM"
+  data-testid="average"
+>
+  <h4
+    class="sc-gueYoa hCdPey"
+  >
+    Average Title
+  </h4>
+  <svg
+    class="CircularProgressbar sc-dmqHEX crukvD"
+    data-test-id="CircularProgressbar"
+    viewBox="0 0 100 100"
+  >
+    <path
+      class="CircularProgressbar-trail"
+      d="
+      M 50,50
+      m 0,-46
+      a 46,46 0 1 1 0,92
+      a 46,46 0 1 1 0,-92
+    "
+      fill-opacity="0"
+      stroke-width="8"
+      style="stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: 0px;"
+    />
+    <path
+      class="CircularProgressbar-path"
+      d="
+      M 50,50
+      m 0,-46
+      a 46,46 0 1 1 0,92
+      a 46,46 0 1 1 0,-92
+    "
+      fill-opacity="0"
+      stroke-width="8"
+      style="stroke-dasharray: 289.02652413026095px 289.02652413026095px; stroke-dashoffset: 28.90265241302609px;"
+    />
+    <text
+      class="CircularProgressbar-text"
+      x="50"
+      y="50"
+    >
+      900
+    </text>
+  </svg>
+</div>
+`;
