@@ -1,6 +1,6 @@
 export interface MetricDB {
   id: string
-  timestamp: Date
+  timestamp: number
   value: string
   name: string
 }

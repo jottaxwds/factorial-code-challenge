@@ -5,8 +5,8 @@ import { getAverages } from '../utils'
 
 const router = express.Router()
 
-// @route   GET /metrics/all
-// @desc    Get all metrics
+// @route   GET /metrics/averages
+// @desc    Get hourly/daily/minutly averages
 // @access  Public
 router.get('/averages', async (_, res) => {
   const { metrics } = await getAllMetrics()

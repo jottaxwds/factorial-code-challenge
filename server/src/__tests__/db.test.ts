@@ -12,18 +12,12 @@ describe('initDB', () => {
       }
     )
 
-    // Mock the saveMetricsToJSONDb function to test if it is called
     const mockedSaveMetricsToJSONDb = jest.fn()
-
-    // Call the initDB function
     await initDB()
-
-    // Expect that saveMetricsToJSONDb was called with the correct arguments
     expect(mockedSaveMetricsToJSONDb).toHaveBeenCalledWith(expect.any(Array))
   })
 
   it('loads the existing DB file if it exists', async () => {
-    // Define a sample metrics array
     const metrics = [
       {
         name: 'metric1',
@@ -37,7 +31,6 @@ describe('initDB', () => {
       }
     ]
 
-    // Mock the fs.readFile method to simulate reading the metrics from the file
     const mockedReadFile = jest.mocked(fs.readFile)
     mockedReadFile.mockImplementationOnce(
       (_: PathOrFileDescriptor, callback: (err: Error, data: Buffer | null) => void) => {
@@ -45,19 +38,12 @@ describe('initDB', () => {
         callback(null, Buffer.from(data))
       }
     )
-
-    // Mock the saveMetricsToJSONDb function to test that it is not called
     const mockedSaveMetricsToJSONDb = jest.fn()
-
-    // Call the initDB function
     await initDB()
-
-    // Expect that saveMetricsToJSONDb was not called
     expect(mockedSaveMetricsToJSONDb).not.toHaveBeenCalled()
   })
 
   it('handles errors thrown when reading the DB file', async () => {
-    // Mock the fs.readFile method to simulate an error when reading the file
     const mockedReadFile = jest.mocked(fs.readFile)
     mockedReadFile.mockImplementationOnce(
       (_: PathOrFileDescriptor, callback: (err: Error, data: Buffer | null) => void) => {
@@ -65,13 +51,8 @@ describe('initDB', () => {
       }
     )
 
-    // Mock the saveMetricsToJSONDb function to test if it is called
     const mockedSaveMetricsToJSONDb = jest.fn()
-
-    // Call the initDB function
     await initDB()
-
-    // Expect that saveMetricsToJSONDb was called with the correct arguments
     expect(mockedSaveMetricsToJSONDb).toHaveBeenCalledWith(expect.any(Array))
   })
 })
