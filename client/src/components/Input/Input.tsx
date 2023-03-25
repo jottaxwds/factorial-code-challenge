@@ -63,8 +63,9 @@ const Input = ({
       }
       if (isTypeNumeric && inputValue === "0" && newValue !== "") {
         const digits = newValue.split("");
-        setInputValue(digits.length > 1 ? digits[1] : digits[0]);
-        onChange({ field: name, value: newValue });
+        const newNumericValue = digits.length > 1 ? digits[1] : digits[0];
+        setInputValue(newNumericValue);
+        onChange({ field: name, value: newNumericValue });
         return;
       }
       setInputValue(!newValue && isTypeNumeric ? "0" : newValue);

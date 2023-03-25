@@ -19,7 +19,7 @@ describe('/metrics', () => {
   describe('/paginated', () => {
     it('Should return first page metrics if retrieved from DB', done => {
       const mock = new AxiosMockAdapter(axios)
-      const expectRes = { metrics: allSuccess, total: 0, error: null }
+      const expectRes = { metrics: allSuccess, total: '0', error: null }
       mock.onGet(`${DB_URL}/${DB_SORTING}&${PAGINATED_QUERY_PARAMS}`).reply(200, allSuccess)
       supertest
         .get('/metrics/paginated?page=1&pageSize=8')
@@ -33,7 +33,7 @@ describe('/metrics', () => {
 
     it('Should return empty metrics and error desciption if error happened in db data fetching', done => {
       const mock = new AxiosMockAdapter(axios)
-      const expectRes = { metrics: [], total: 0, error: 'Error 400: Request failed with status code 400' }
+      const expectRes = { metrics: [], total: '0', error: 'Error 400: Request failed with status code 400' }
       mock.onGet(`${DB_URL}/${DB_SORTING}&${PAGINATED_QUERY_PARAMS}`).reply(400, {})
       supertest
         .get('/metrics/paginated?page=1&pageSize=8')

@@ -7,8 +7,14 @@ export interface MetricDB {
 
 export type Metric = Omit<MetricDB, 'id'>
 
-export interface MetricsResponse {
+export interface MetricsAxiosResponse {
   metrics: MetricDB[]
+}
+
+export interface MetricsResponse {
+  metrics: MetricDB[],
+  total: string;
+  error: null | string;
 }
 
 export function isMetricData(data: MetricDB): data is MetricDB {
